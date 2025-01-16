@@ -4,7 +4,7 @@
 
 
 
-let numeroUtente = prompt("scegli fra pari o dispari")
+let numeroUtente = prompt("scegli fra pari o dispari").toLowerCase()
 
 console.log(`l'utente ha scelto : ${numeroUtente}`);
 
@@ -12,6 +12,7 @@ let numeroUtente2 = parseInt(prompt("scegli un numero da 1 a 5"))
 
 console.log(`l'utente ha scelto : ${numeroUtente2}`);
 
+let risultatoPariDispari = ""
 
 function numeroCasuale(min, max){
     let random = Math.floor(Math.random()* max) + min;
@@ -27,6 +28,22 @@ let somma = randomNumbers + numeroUtente2;
 
 console.log(`la somma dei due numeri è : ${somma} `)
 
+function pariODispari(x){
 
+    if(x % 2 === 0){
+        risultatoPariDispari = "pari"
+        return console.log(`il numero ${x} è pari`)
+    } else{ 
+        risultatoPariDispari = "dispari"
+        return console.log(`il numero ${x} è dispari`)
 
+    }
+}
 
+pariODispari(somma)
+
+if (numeroUtente === risultatoPariDispari){
+    console.log("complimenti utente, hai vinto")
+} else{
+    console.log("mi dispiace, hai perso")
+}
